@@ -88,11 +88,11 @@ def Profitability_Prediction(Areas, Ages, Types, Price_Ranges, Capacities, Items
 
 
 #Model deployment
-client = Client('http://localhost:9004/')
+client = Client('https://yjtabpy.herokuapp.com:443/')
+client.set_credentials('yjkim', 'Tableau1!')
+
 client.deploy('Restaurant_Profitability',
               Profitability_Prediction,
               'Returns prediction of profitability for restaurant(s).'
               , override = True)
-
-
 
